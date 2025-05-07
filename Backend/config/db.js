@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 //Function to connect to the MongoDb Database
 const connectDB = async () => {
@@ -6,4 +6,4 @@ const connectDB = async () => {
     await mongoose.connect(`${process.env.MONGODB_URI}/BudgetTracker`);
 }
 
-export default connectDB;
+module.exports = connectDB;

@@ -1,19 +1,11 @@
 const express = require("express");
-
-
-const{
-  registerUser,
-  loginUser,
-  getUserInfo,
-
-} = require("../controllers/authController");
+const { registerUser} = require("../controllers/authController.js");
 
 const router = express.Router();
-
+console.log(registerUser)
+// Ensure that the functions are passed correctly to the routes
 router.post("/register", registerUser);
+// router.post("/login", loginUser);
 
-router.post("/login", loginUser);
-
-//router.get("getUser", protect, getUserInfo);
-
+// export the router
 module.exports = router;
