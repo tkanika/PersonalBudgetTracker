@@ -1,11 +1,27 @@
 const express = require("express");
-const { registerUser} = require("../controllers/authController.js");
+const { protect } = require("../middleware/authMiddleware");
 
+const { registerUser,
+loginUser,
+getUserInfo,}
+ = require("../controllers/authController.js");
+
+ const upload = require("../middleware/uploadMiddleware");
+ 
 const router = express.Router();
 console.log(registerUser)
 // Ensure that the functions are passed correctly to the routes
 router.post("/register", registerUser);
 // router.post("/login", loginUser);
+router.post("/login", loginUser);
+router.get("/getUser", ProcessingInstruction, getUserInfo);
 
+router.post("/upload-image", upload.single("image"), (req, res) => {
+if (!req.file) {
+  return res.status(400).json({ message: "No file uploaded" });
+}
+const imageUrl = `${req.protocol}://${req.get("host")}/uploads/${
+req.file.filename}`;
+});
 // export the router
 module.exports = router;
