@@ -1,11 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
+import DashboardLayout from '../../components/layouts/DashboardLayout';
 
-const Expense = () => {
+const Income = () => {
+
+  const [OpenAddIncomeModal, setOpenAddIncomeModal] = useState(false)
   return (
-    <div>
-      <h1>Expense</h1>
-    </div>
+    <DashboardLayout activeMenu="Dashboard">
+      <div className="my-5 mx-auto">
+      <div className="grid grid-cols-1 gap-6">
+        <div className="">
+          <IncomeOverview
+          transactions={incomeData}
+          onAddIncome={() => setOpenAddIncomeModal(true)}
+          />
+        </div>
+      </div>
+      </div>
+    </DashboardLayout>
   );
 };
 
-export default Expense;
+export default Income;
