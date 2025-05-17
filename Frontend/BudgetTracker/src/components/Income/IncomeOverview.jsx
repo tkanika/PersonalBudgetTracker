@@ -10,7 +10,7 @@ const IncomeOverview = ({transactions, onAddIncome}) => {
     const result = prepareIncomeBarChartData(transactions);
     setChartData(result);
 
-     return () = {};
+     return () => {};
   }, [transactions]);
   return (
     <div className="card">

@@ -3,6 +3,8 @@ import DashboardLayout from '../../components/layouts/DashboardLayout';
 import IncomeOverview from '../../components/Income/IncomeOverview';
 import axiosInstance from '../../utils/axiosInstance';
 import { IoMdDoneAll } from 'react-icons/io';
+import Modal from '../../components/Modal';
+import { API_PATHS } from '../../utils/apiPaths';
 
 const Income = () => {
 
@@ -13,7 +15,7 @@ const Income = () => {
     data: null,
   });
 
-  const [OpenAddIncomeModal, setOpenAddIncomeModal] = useState(true);
+  const [OpenAddIncomeModal, setOpenAddIncomeModal] = useState(false);
 
   // Get all income details
   const fetchIncomeDetails = async () => {
@@ -47,12 +49,9 @@ const Income = () => {
   const handleDownloadIncomeDetails = async () => {};
 
   useEffect(() => {
-    fetchIncomeDetails
+  fetchIncomeDetails();
+}, []);
 
-    return () => {
-     
-    }
-  }, )
 
   return (
     <DashboardLayout activeMenu="Dashboard">
@@ -66,12 +65,13 @@ const Income = () => {
         </div>
       </div>
 
-      <Modal 
-          isOpen={OpenAddIncomeModal(false)}
+      <Modal
+  isOpen={OpenAddIncomeModal}
+
           onClose={() => setOpenAddIncomeModal(false)}
           title="Add Income"
           >
-          <div>Add Income Form</div>
+          <AddIncomeForm onAddIncome={handleAddIncome} />
           </Modal>
       </div>
     </DashboardLayout>
