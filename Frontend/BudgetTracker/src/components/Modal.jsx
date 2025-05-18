@@ -32,7 +32,7 @@ const Modal = ({ children, isOpen, onClose, title }) => {
                 stroke="currentColor"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                strokewidth="2"
+                strokeWidth="2"
                 d="ml 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
                 />
                </svg>

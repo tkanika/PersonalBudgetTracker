@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Input from '../Inputs/Input';
+import EmojiPickerPopup from '../EmojiPickerPopup';
 
 const AddIncomeForm = ({onAddIncome}) => {
   const [income, setIncome] = useState({
@@ -35,7 +36,7 @@ const AddIncomeForm = ({onAddIncome}) => {
           />
 
           <Input
-            value={income.data}
+            value={income.date}
             onChange={({  target }) => handleChange("date", target.value)}
             label="Date"
             placeholder=""

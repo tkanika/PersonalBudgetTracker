@@ -5,6 +5,7 @@ import axiosInstance from '../../utils/axiosInstance';
 import { IoMdDoneAll } from 'react-icons/io';
 import Modal from '../../components/Modal';
 import { API_PATHS } from '../../utils/apiPaths';
+import AddIncomeForm from '../../components/Income/AddIncomeForm';
 
 const Income = () => {
 
