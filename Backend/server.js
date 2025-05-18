@@ -13,10 +13,9 @@ const app = express();
 //  Middleware to handle cors 
 app.use(
   cors({
-    origin: process.env.CLIENT_URL,
-    credentials: true, // enable cookies and auth headers
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
+    origin:process.env.CLIENT_URL ||"*",
+    methods:["GET","POST","PUT","DELETE"],
+    allowedHeaders:["Content-Type","Authorization"],
   })
 );
 
@@ -24,7 +23,7 @@ app.use(express.json());
 
 connectDB();
 
-app.get('/',(req,res)=>res.send("API Working"))
+
 
  app.use("/api/v1/auth", authRoutes);
 
