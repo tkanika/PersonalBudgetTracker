@@ -23,6 +23,10 @@ app.use(express.json());
 
 connectDB();
 
+app.get("/healthz", (req, res) => {
+  res.status(200).send("OK");
+});
+
  app.use("/api/v1/auth", authRoutes);
 
  app.use("/api/v1/income", incomeRoutes);
