@@ -23,9 +23,7 @@ app.use(express.json());
 
 connectDB();
 
-app.get("/healthz", (req, res) => {
-  res.status(200).send("OK");
-});
+app.get('/',(req,res)=>res.send("API Working"))
 
  app.use("/api/v1/auth", authRoutes);
 
