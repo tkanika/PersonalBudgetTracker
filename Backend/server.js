@@ -19,7 +19,7 @@ app.use(express.json());
 
 connectDB();
 
-
+app.get('/',(req,res)=>res.send("API Working"))
 
  app.use("/api/v1/auth", authRoutes);
 
